@@ -9,6 +9,7 @@ class ProductService {
   constructor(
     private readonly httpService: HttpService
   ) { }
+
   private async getTotalProductsCount(search?: string, category?: string) {
     const url = new URL(`${SERVER_URL}/${API_PRODUCTS.MAIN}`,)
 
@@ -20,6 +21,7 @@ class ProductService {
     this.totalCount = res.length - 1
     return this.totalCount
   }
+
   public async getProducts(search?: string, page: number = 1, limit: number = ITEM_PER_PAGE, category?: string): Promise<ProductsWithParamsResponseType> {
     const url = new URL(`${SERVER_URL}/${API_PRODUCTS.MAIN}`,)
 
@@ -35,6 +37,7 @@ class ProductService {
 
     return { products, totalCount }
   }
+
   public async getProductById(id: string): Promise<ProductType> {
     const url = new URL(`${SERVER_URL}/${API_PRODUCTS.MAIN}/${id}`,)
 

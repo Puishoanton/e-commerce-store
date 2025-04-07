@@ -1,8 +1,8 @@
-import { ITEM_PER_PAGE } from "@/shared/constants"
+import { useQuery, UseQueryResult } from "@tanstack/react-query"
 import { API_PRODUCTS, SERVER_URL } from "@/shared/service/api"
 import { productService } from "@/shared/service/product.service"
+import { ITEM_PER_PAGE } from "@/shared/constants"
 import { ProductsWithParamsResponseType } from "@/shared/types"
-import { useQuery, UseQueryResult } from "@tanstack/react-query"
 
 type Props = {
   search?: string,

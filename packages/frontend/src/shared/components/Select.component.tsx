@@ -4,6 +4,7 @@ type Props = {
   onChooseCategory: (category: string) => void
   categorys: Array<string>
 }
+
 const Select: FC<Props> = ({ onChooseCategory, categorys }) => {
   const onChooseHandler = (e: ChangeEvent<HTMLSelectElement>) => {
     onChooseCategory(e.target.value);
