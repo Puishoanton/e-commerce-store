@@ -1,5 +1,5 @@
-import { useCartStore } from '@/shared/store/cart.store';
 import { FC } from 'react'
+import { useCartStore } from '@/shared/store/cart.store';
 
 type Props = {
   id: string,

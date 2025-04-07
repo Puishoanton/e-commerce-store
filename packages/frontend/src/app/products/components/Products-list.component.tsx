@@ -1,10 +1,10 @@
 'use client'
-import ProductItem from './Product-item.component'
-import { useGetProductsQuery } from '../hooks/use-get-products.hooks'
+import Filter from '@/shared/components/Filter.component'
 import Loader from '@/shared/components/Loader.component'
 import Pagination from '@/shared/components/Pagination.component'
+import ProductItem from './Product-item.component'
+import { useGetProductsQuery } from '../hooks/use-get-products.hooks'
 import { useProductsQuery } from '../hooks/use-products-query.hooks'
-import Filter from '@/shared/components/Filter.component'
 
 const ProductsList = () => {
   const { page, limit, search, category, onPageChange, onChooseCategory, debouncedSearch, } = useProductsQuery()

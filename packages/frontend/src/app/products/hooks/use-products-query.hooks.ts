@@ -1,6 +1,6 @@
-import { ITEM_PER_PAGE } from '@/shared/constants'
 import { Dispatch, SetStateAction, useEffect, useState } from "react"
 import { useDebounceCallback } from 'usehooks-ts'
+import { ITEM_PER_PAGE } from '@/shared/constants'
 
 type ReturnType = {
   page: number,

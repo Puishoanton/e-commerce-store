@@ -1,7 +1,7 @@
 import { create } from "zustand";
-import { CartProduct } from "../types"
 import { persist } from "zustand/middleware";
 import { CART_KEY_LOCAL_STORAGE } from "../constants";
+import { CartProduct } from "../types"
 
 type CartType = {
   cart: Array<CartProduct>

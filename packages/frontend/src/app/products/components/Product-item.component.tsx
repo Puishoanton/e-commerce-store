@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import AddToCartBtn from '@/shared/components/Add-to-cart-btn.component';
 import { useAddtoCart } from '@/shared/hooks/use-add-to-cart.hook';
 import { ProductType } from "@/shared/types";
@@ -15,7 +15,6 @@ const ProductItem: FC<Props> = ({ product }) => {
     <li className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
       <div className="aspect-square w-full overflow-hidden">
         <Image
-          // src={`/${product.img}`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           src={`/1.png`}
           alt={`${product.title}`}

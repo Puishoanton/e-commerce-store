@@ -1,13 +1,12 @@
-import React, { FC } from 'react'
-import SearchBar from './Search-bar.component'
-import Select from './Select.component'
+import { FC } from 'react';
+import SearchBar from './Search-bar.component';
+import Select from './Select.component';
+import { categorys } from '../mock';
 
 type Props = {
   debouncedSearch: (newSearch: string) => void;
   onChooseCategory: (category: string) => void
 }
-
-const categorys = ['All', 'Smartphones', 'Laptops']
 
 const Filter: FC<Props> = ({ debouncedSearch, onChooseCategory }) => {
   return (
