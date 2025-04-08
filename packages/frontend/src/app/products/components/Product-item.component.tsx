@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import AddToCartBtn from '@/shared/components/Add-to-cart-btn.component';
 import { useAddtoCart } from '@/shared/hooks/use-add-to-cart.hook';
 import { ProductType } from "@/shared/types";

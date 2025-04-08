@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
-import SearchBar from './Search-bar.component'
-import Select from './Select.component'
+import { FC } from 'react';
+import SearchBar from './Search-bar.component';
+import Select from './Select.component';
 
 type Props = {
   debouncedSearch: (newSearch: string) => void;

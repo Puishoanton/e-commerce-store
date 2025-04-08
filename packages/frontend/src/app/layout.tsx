@@ -1,15 +1,15 @@
 'use client'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import './globals.css'
 import Header from "@/shared/components/Header.component";
+import './globals.css'
+
+type Props = {
+  children: React.ReactNode
+}
 
 const queryClient = new QueryClient()
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children, }: Readonly<Props>) {
   return (
     <html lang="en" className="overflow-y-scroll">
       <QueryClientProvider client={queryClient}>

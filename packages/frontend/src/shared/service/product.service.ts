@@ -20,6 +20,7 @@ class ProductService {
 
     return products
   }
+
   public async getProductById(id: string): Promise<ProductType> {
     const url = new URL(`${SERVER_URL}/${API_PRODUCTS.MAIN}/${id}`,)
 

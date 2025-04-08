@@ -1,6 +1,6 @@
 'use client'
-import { useCartStore } from '@/shared/store/cart.store'
 import { useMemo } from 'react'
+import { useCartStore } from '@/shared/store/cart.store'
 import CartItem from './Cart-item.component'
 
 const CartList = () => {

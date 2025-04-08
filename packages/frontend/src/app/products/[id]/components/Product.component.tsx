@@ -1,9 +1,9 @@
 'use client'
 import Image from "next/image";
-import { useGetProductByIdQuery } from "../../hooks/use-get-product-by-id.hooks";
 import { useParams } from "next/navigation";
 import AddToCartBtn from "@/shared/components/Add-to-cart-btn.component";
 import { useAddtoCart } from "@/shared/hooks/use-add-to-cart.hook";
+import { useGetProductByIdQuery } from "../../hooks/use-get-product-by-id.hooks";
 
 const Product = () => {
   const id = useParams().id?.toString();
