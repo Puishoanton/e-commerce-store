@@ -4,22 +4,10 @@ import { ITEM_PER_PAGE } from "../constants";
 import { ProductsWithParamsResponseType, ProductType } from "../types"
 
 class ProductService {
-  private totalCount: number | null = null;
-
   constructor(
     private readonly httpService: HttpService
   ) { }
-  private async getTotalProductsCount(search?: string, category?: string) {
-    const url = new URL(`${SERVER_URL}/${API_PRODUCTS.MAIN}`,)
 
-    if (search) url.searchParams.append("search", search);
-    if (category) url.searchParams.append("category", category);
-
-    const res = await this.httpService.get<Array<ProductType>>(url.toString())
-
-    this.totalCount = res.length - 1
-    return this.totalCount
-  }
   public async getProducts(search?: string, page: number = 1, limit: number = ITEM_PER_PAGE, category?: string): Promise<ProductsWithParamsResponseType> {
     const url = new URL(`${SERVER_URL}/${API_PRODUCTS.MAIN}`,)
 
@@ -28,12 +16,9 @@ class ProductService {
     if (search) url.searchParams.append("search", search);
     if (category) url.searchParams.append("category", category);
 
-    // await new Promise(resolve => setTimeout(resolve, 3000));
+    const products = await this.httpService.get<ProductsWithParamsResponseType>(url.toString(),)
 
-    const products = await this.httpService.get<Array<ProductType>>(url.toString(),)
-    const totalCount = await this.getTotalProductsCount(search, category)
-
-    return { products, totalCount }
+    return products
   }
   public async getProductById(id: string): Promise<ProductType> {
     const url = new URL(`${SERVER_URL}/${API_PRODUCTS.MAIN}/${id}`,)

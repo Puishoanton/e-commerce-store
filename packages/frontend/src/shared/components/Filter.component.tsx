@@ -7,7 +7,7 @@ type Props = {
   onChooseCategory: (category: string) => void
 }
 
-const categorys = ['All', 'Smartphones', 'Laptops']
+const categorys = ['All', 'Smartphones', 'Laptops', 'TV']
 
 const Filter: FC<Props> = ({ debouncedSearch, onChooseCategory }) => {
   return (
