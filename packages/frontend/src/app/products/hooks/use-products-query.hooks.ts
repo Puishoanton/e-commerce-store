@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react"
-import { useDebounceCallback } from 'usehooks-ts'
 import { ITEM_PER_PAGE } from '@/shared/constants'
+import { Dispatch, SetStateAction, useState } from "react"
+import { useDebounceCallback } from 'usehooks-ts'
 
 type ReturnType = {
   page: number,
@@ -24,17 +24,8 @@ export const useProductsQuery = (): ReturnType => {
     setPage(1)
   }, 500);
 
-  const onPageChange = () => (newPage: number): void => {
-    localStorage.setItem('page', `${newPage}`)
-    setPage(newPage)
-  }
+  const onPageChange = () => (newPage: number): void => setPage(newPage)
   const onChooseCategory = (category: string): void => setCategory(category)
 
-  useEffect(() => {
-    const storedPage = localStorage.getItem('page');
-    if (storedPage) {
-      setPage(Number(storedPage));
-    }
-  }, []);
   return { page, limit, search, category, onPageChange, onChooseCategory, setLimit, setCategory, debouncedSearch }
 }
