@@ -8,10 +8,7 @@ RUN npm install
 
 COPY . .
 
-ENV DATABASE_URL=$DATABASE_URL
-
 RUN npx prisma generate
-RUN npx prisma migrate deploy
 
 RUN npm run build
 
